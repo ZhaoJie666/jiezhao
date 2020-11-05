@@ -1,0 +1,256 @@
+a_list<-list(
+  c(1,12,31,15,116),
+  month.abb,
+  matrix(c(1,2,3,4),nrow=2),
+  asin
+)
+a_list
+[[1]]
+[[2]]
+[[1]][1]
+names(a_list)<-c("numbers","months","matrix","")
+a_list[[1]][3]
+class(a_list[[1]][3])
+class(a_list[1][3])
+a_list[1]
+class(a_list[1])
+a_list[[1]][2]
+class(a_list[[1]][2])
+diag(3)
+diag(2)
+diag(6)
+diag(x=2,3,6)
+diag(x=2,3,6,names = FALSE)
+diag(x=2,3,6,names = TRUE)
+is.atomic(list())
+is.recursive(list())
+length(a_list)
+dim(a_list)
+nrow(a_list)
+NROW(a_list)
+ncol(a_list)
+NCOL(a_list)
+li1<-list(1:10)
+li2<-list(6:10)
+li1[[1]]+li2[[1]]
+li<-list(
+  first=2,
+  second=1,
+  third=list(
+    alpha=1.136,
+    beta=2.732,
+    delta=list(c(0.01,0.02),TRUE)
+  )
+)
+li[1]
+li$third
+class(li$first)
+li[["first"]]
+length(li)
+length(li[[3]])
+li[[3]]
+li[[3]][[3]]
+li[[3]][3]
+li[c(1,2)]
+li[c(2,1)] 
+li[[1]]
+li[c(TRUE,FALSE,TRUE)]
+li$f
+li[c(100,2,5)]
+li[c("first","delta","fifth")]
+li[[5]]
+xlzh<-c(1,10,100,1000)
+as.list(xlzh)
+as.matrix(xlzh)
+as.array(xlzh)
+pre_li<-list(
+  one=123,
+  two=c(1:3),
+  three=list(c(2,3),c("apple","pen")),
+  four=123456,
+  five=c(1,3,5)
+)
+new_li<-unlist(pre_li)
+class(new_li)
+class(new_li[2])
+class(pre_li)
+c(pre_li,c(1,2))
+c(pre_li,list(2))
+l1=list(1,2,3)
+l2=list(5,6,list(7))
+cbind(l1,l2)
+rbind(l1,l2)
+length(NULL)
+length(NA)
+is.null(NA)
+namelist<-list(
+  first="wen",
+  second="zhou",
+  third="yi",
+  forth="ke",
+  fifth="da",
+  sixth="xue"
+)
+namelist$second<-NULL
+namelist
+namelist[[2]]<-list(NULL)
+namelist[[4]]<-list(NULL)
+namelist[[6]]<-list(NULL)
+namelist
+testpair<-formals(sd)
+testpair
+class(testpair)
+pairlist()
+list()
+data1<-data.frame(
+  x=letters[1:6],
+  y=rnorm(6),
+  z=runif(6)>=0.5
+)
+data1
+rnorm(3)
+q<-rnorm(6)
+names(q)<-month.name[1:6]
+data.frame(
+  x=letters[1:6],
+  y=q,
+  z=runif(6)>=0.5
+)
+data.frame(
+  x=letters[1:6],
+  y=q,
+  z=runif(6)>=0.5,
+  row.names = NULL
+)
+rownames(data1)
+colnames(data1)
+dimnames(data1)
+nrow(data1)
+ncol(data1)
+dim(data1)
+NROW(data1)
+NCOL(data1)
+names(data1)
+length(data1)
+data.frame(
+  1,
+  0:1,
+  6:9
+)
+data.frame(
+  x=1,
+  y=0:1,
+  z=6:9
+)
+data.frame(
+  "111"=1,
+  "111"=0:1,
+  "111"=6:9,
+  check.names = TRUE
+)
+data.frame(
+  "1"=1,
+  "11"=0:1,
+  "111"=6:9,
+  check.names = TRUE
+)
+data.frame(
+  "111"=1,
+  "111"=0:1,
+  "111"=6:9,
+  check.names = FALSE
+)
+data1[2:3]
+data1[2:3,-3]
+data1[2:3,-1]
+data1[2:3,0]
+data1[2:3,-2]
+data1[2:3,1]
+data1[c(TRUE,FALSE,FALSE,TRUE,TRUE),c("x","y")]
+data1$x[2:3]
+data1[["x"]][2:3]
+data1[[1]][2:3]
+subset(data1,y>0|z,x)
+t(data1)
+class(t(data1))
+data2<-data.frame(
+  z=rlnorm(6),
+  y=sample(6),
+  x=letters[3:8]
+)
+data2
+cbind(data1,data2)
+rbind(data1,data2)
+merge(data1,data2,by="x")
+merge(data1,data2,by="x",all=TRUE)
+colSums(data2[,1:2])
+colMeans(data2[,1:2])
+an_environment<-new.env()
+an_environment
+an_environment[["pythag"]]<-c(1,3,5,7)
+an_environment$root<-polyroot(c(21,35,97))
+assign(
+  "moonday",
+  weekdays(as.Date("2020/11/05")),
+  an_environment
+)
+an_environment[["pythag"]]
+an_environment$root
+get("moonday",an_environment)
+ls(envir =an_environment )
+ls.str(envir =an_environment )
+exists("pythag",an_environment)
+a_list<-as.list(an_environment)
+a_list
+as.environment(a_list)
+list2env(a_list)
+nested_environment<-new.env(parent=an_environment)
+exists("pythag",nested_environment)
+exists("pythag",an_environment,inherits = FALSE)
+stormers<<-c(2,3,5,7,11,13,17,19)
+get("stormers",envir = globalenv())
+head(ls(envir = baseenv()))
+head(ls(envir = baseenv()),20)
+hy<-function(x,y){
+  sqrt(x^2+y^2)
+}
+hy(3,4)
+hy(y=3,x=4)
+hyn<-function(x=12,y=5){
+  sqrt(x^2+y^2)
+}
+hyn()
+hyn(3,4)
+formals(hyn)
+args(hyn)
+formalArgs(hyn)
+body(hyn)
+deparse(body(hyn))
+nor<-function(x,m=mean(x),s=sd(x)){
+  (x-m)/s
+}
+nor<-nor(c(1,3,5,7,10))
+nor
+mean(nor)
+nora<-function(x,m=mean(x,na.rm=na.rm),s=sd(x,na.rm=na.rm),na.rm=FALSE){
+  (x-m)/s
+}
+nora(c(1,5,8,NA))
+nora(c(1,5,8,NA),na.rm = TRUE)
+nora<-function(x,m=mean(x,...),s=sd(x,...),...){
+  (x-m)/s
+}
+nora(c(1,5,8,NA))
+nora(c(1,5,8,NA),na.rm = TRUE)
+do.call(nora,list(1,2,3))
+do.call(function(x,y)x+y,list(1:6,6:1))
+emp<-ecdf(rnorm(50))
+emp
+fx<-function(p){
+  q<-9
+  fp<-function(q){
+    q*p
+  }
+  fp(p)
+}
+fx(9)
