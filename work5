@@ -1,0 +1,27 @@
+list1<-list(
+  c(1^2,2^2,3^2),
+  c(4^2),
+  c(5^2),
+  c(6^2),
+  c(7^2),
+  NULL,
+  c(8^2),
+  NULL,
+  c(9^2),
+  NULL
+)
+iris
+irisdata<-data.frame(iris)
+irisdata
+colnumber<-col(irisdata)
+colMeans(irisdata[c(1:4)])
+beaver1data<-data.frame(
+  id=1,
+  beaver1
+)
+beaver2data<-data.frame(
+  id=2,
+  beaver2
+)    
+beaverdata<-rbind(beaver1data,beaver2data)
+      
