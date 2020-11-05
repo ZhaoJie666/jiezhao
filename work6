@@ -1,0 +1,20 @@
+multiples_of_pi<-new.env()
+multiples_of_pi[["two_pi"]]<-2*pi
+multiples_of_pi$three_pi<-3*pi
+assign("four_pi",4*pi,multiples_of_pi)
+ls(envir = multiples_of_pi)
+f<-function(q){
+     if (is.finite(q)==FALSE){print("NA")
+       }else  if (q%%2==0) {print("TRUE")
+         }else if (q%%2==1) {print("FALSE")
+         }
+}
+f(0)
+f(1)
+f(-1)
+f(Inf)
+fa<-function(q,m=as.list(q)){
+  return(args=pairlist())
+  return(body=m)
+}
+fa(c(1,2,3))
